@@ -1,0 +1,19 @@
+{
+  "hash": "0ec6f9b8444326752c96e83c648fc5a7",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Preprocesamiento de Datos\"\nsubtitle: \"Aprendizaje Automático con R\"\nauthor: \"Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)\"\ninstitute: Universidad CEU San Pablo\nlogo: img/logos/sticker.png\n# title-slide-attributes:\n#     #data-background-color: black\n#     data-background-image: img/prompt-julia.png\n#     data-background-size: contain\n#format: clean-revealjs\nlang: es\nfig-align: center\nnavigation-mode: vertical\nslide-level: 3\n---\n\n\n\n## ¿Qué es el preprocesamiento de datos?\n\nLa primera fase en un proyecto de aprendizaje automático, después de la recogida de datos, es el preprocesamiento de datos. \n\nEsta fase es crucial porque la calidad de los datos influye directamente en el rendimiento del modelo.\n\n![Garbage in, garbage out](img/03-preprocesamiento-datos/GIGO.png)\n\n## Tareas de preprocesamiento\n\n- Limpieza de datos.\n- Imputación de valores perdidos.\n- Recodificación de variables.\n- Creación de nuevas variables.\n- Transformación de variables: Normalización, cambio de escala, etc.\n- Selección de variables.\n- Fusión de datos.\n- Reestructuración del conjunto de datos.\n\n---\n\n![Fases del preprocesamiento](img/03-preprocesamiento-datos/fases-preprocesamiento.svg)\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    // dispatch for htmlwidgets\n    function fireSlideEnter() {\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n    }\n\n    function fireSlideChanged(previousSlide, currentSlide) {\n      fireSlideEnter();\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

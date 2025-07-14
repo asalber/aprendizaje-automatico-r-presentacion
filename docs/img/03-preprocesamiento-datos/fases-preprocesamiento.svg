@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 600"
+   version="1.1"
+   id="svg45"
+   sodipodi:docname="fases-preprocesamiento.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview45"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.185"
+     inkscape:cx="579.63387"
+     inkscape:cy="327.91762"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg45" />
+  <!-- Título -->
+  <text
+     x="400"
+     y="30"
+     text-anchor="middle"
+     font-size="24"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text1">
+    Preprocesamiento de Datos en ML
+  </text>
+  <!-- Datos crudos (inicio) -->
+  <rect
+     x="50"
+     y="80"
+     width="120"
+     height="60"
+     fill="#e74c3c"
+     stroke="#c0392b"
+     stroke-width="2"
+     rx="5"
+     id="rect1" />
+  <text
+     x="110"
+     y="105"
+     text-anchor="middle"
+     font-size="12px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text2">DATOS</text>
+  <text
+     x="110"
+     y="120"
+     text-anchor="middle"
+     font-size="12px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text3">CRUDOS</text>
+  <!-- Flecha -->
+  <path
+     d="M 180 110 L 220 110"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path5" />
+  <!-- 1. Limpieza de datos -->
+  <rect
+     x="240"
+     y="60"
+     width="140"
+     height="80"
+     fill="#3498db"
+     stroke="#2980b9"
+     stroke-width="2"
+     rx="5"
+     id="rect5" />
+  <text
+     x="310"
+     y="80"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text6">Limpieza</text>
+  <text
+     x="310"
+     y="95"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text7">• Valores faltantes</text>
+  <text
+     x="310"
+     y="110"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text8">• Outliers</text>
+  <text
+     x="310"
+     y="125"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text9">• Duplicados</text>
+  <!-- Flecha -->
+  <path
+     d="M 390 100 L 430 100"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path10" />
+  <!-- 2. Transformación -->
+  <rect
+     x="450"
+     y="60"
+     width="140"
+     height="80"
+     fill="#9b59b6"
+     stroke="#8e44ad"
+     stroke-width="2"
+     rx="5"
+     id="rect10" />
+  <text
+     x="520"
+     y="80"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text10">Transformación</text>
+  <text
+     x="520"
+     y="95"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text11">• Normalización</text>
+  <text
+     x="520"
+     y="110"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text12">• Escalado</text>
+  <text
+     x="520"
+     y="125"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text13">• Codificación</text>
+  <!-- Flecha hacia abajo -->
+  <path
+     d="M 520 150 L 520 190"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path14" />
+  <!-- 3. Selección de características -->
+  <rect
+     x="450"
+     y="210"
+     width="140"
+     height="80"
+     fill="#e67e22"
+     stroke="#d35400"
+     stroke-width="2"
+     rx="5"
+     id="rect14" />
+  <text
+     x="520"
+     y="230"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text14">Selección de</text>
+  <text
+     x="520"
+     y="245"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text15">Características</text>
+  <text
+     x="520"
+     y="265"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text16">• Filtrado</text>
+  <text
+     x="520"
+     y="280"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text17">• Wrapper</text>
+  <!-- Flecha hacia la izquierda -->
+  <path
+     d="M 440 250 L 400 250"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path19" />
+  <!-- 4. Reducción de dimensionalidad -->
+  <rect
+     x="240"
+     y="210"
+     width="140"
+     height="80"
+     fill="#1abc9c"
+     stroke="#16a085"
+     stroke-width="2"
+     rx="5"
+     id="rect19" />
+  <text
+     x="310"
+     y="230"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text19">Reducción de</text>
+  <text
+     x="310"
+     y="245"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text20">Dimensionalidad</text>
+  <text
+     x="310"
+     y="265"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text21">• PCA</text>
+  <text
+     x="310"
+     y="280"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text22">• t-SNE</text>
+  <!-- Flecha hacia abajo -->
+  <path
+     d="M 310 300 L 310 340"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path23" />
+  <!-- 5. División de datos -->
+  <rect
+     x="240"
+     y="360"
+     width="140"
+     height="80"
+     fill="#f39c12"
+     stroke="#e67e22"
+     stroke-width="2"
+     rx="5"
+     id="rect24" />
+  <text
+     x="310"
+     y="380"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text24">División de</text>
+  <text
+     x="310"
+     y="395"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text25">Datos</text>
+  <text
+     x="310"
+     y="415"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text26">• Entrenamiento</text>
+  <text
+     x="310"
+     y="430"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text27">• Validación/Prueba</text>
+  <!-- Flecha hacia la derecha -->
+  <path
+     d="M 390 400 L 430 400"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path27" />
+  <!-- Datos procesados (final) -->
+  <rect
+     x="450"
+     y="370"
+     width="140"
+     height="60"
+     fill="#27ae60"
+     stroke="#229954"
+     stroke-width="2"
+     rx="5"
+     id="rect28" />
+  <text
+     x="520"
+     y="395"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text28">DATOS</text>
+  <text
+     x="520"
+     y="410"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text29">PROCESADOS</text>
+  <!-- Flecha hacia ML -->
+  <path
+     d="M 600 400 L 640 400"
+     stroke="#34495e"
+     stroke-width="3"
+     fill="none"
+     marker-end="url(#arrowhead)"
+     id="path33" />
+  <!-- Modelo ML -->
+  <rect
+     x="660"
+     y="370"
+     width="100"
+     height="60"
+     fill="#8e44ad"
+     stroke="#732d91"
+     stroke-width="2"
+     rx="5"
+     id="rect33" />
+  <text
+     x="710"
+     y="395"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text33">MODELO</text>
+  <text
+     x="710"
+     y="410"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text34">ML</text>
+  <!-- Proceso paralelo: Ingeniería de características -->
+  <rect
+     x="50"
+     y="210"
+     width="140"
+     height="80"
+     fill="#e74c3c"
+     stroke="#c0392b"
+     stroke-width="2"
+     rx="5"
+     id="rect40" />
+  <text
+     x="120"
+     y="230"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text40">Ingeniería de</text>
+  <text
+     x="120"
+     y="245"
+     text-anchor="middle"
+     font-size="14px"
+     font-weight="bold"
+     fill="#ffffff"
+     id="text41">Características</text>
+  <text
+     x="120"
+     y="265"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text42">• Creación</text>
+  <text
+     x="120"
+     y="280"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#ffffff"
+     id="text43">• Combinación</text>
+  <!-- Flecha desde ingeniería hacia división -->
+  <g
+     id="g45">
+    <path
+       d="m 120,300 v 96.29291 l 95.81236,0.18306"
+       stroke="#34495e"
+       stroke-width="2"
+       fill="none"
+       marker-end="url(#arrowhead)"
+       stroke-dasharray="5, 5"
+       id="path44"
+       sodipodi:nodetypes="ccc" />
+  </g>
+  <!-- Definición de marcadores para flechas -->
+  <defs
+     id="defs45">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#34495e"
+         id="polygon44" />
+    </marker>
+    <marker
+       id="smallarrow"
+       markerWidth="8"
+       markerHeight="5"
+       refX="7"
+       refY="2.5"
+       orient="auto">
+      <polygon
+         points="0 0, 8 2.5, 0 5"
+         fill="#fff"
+         id="polygon45" />
+    </marker>
+  </defs>
+</svg>

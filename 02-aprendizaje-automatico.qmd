@@ -1,6 +1,6 @@
 ---
 title: "Aprendizaje Automático"
-subtitle: "Cómo aprender de los datos"
+subtitle: "Aprendizaje Automático con R"
 author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
 institute: Universidad CEU San Pablo
 logo: img/logos/sticker.png

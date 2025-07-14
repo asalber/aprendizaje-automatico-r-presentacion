@@ -1,0 +1,47 @@
+---
+title: "Preprocesamiento de Datos"
+subtitle: "Aprendizaje Automático con R"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+#format: clean-revealjs
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+```{r}
+#| include: false
+#| file: setup.R
+```
+
+## ¿Qué es el preprocesamiento de datos?
+
+La primera fase en un proyecto de aprendizaje automático, después de la recogida de datos, es el preprocesamiento de datos. 
+
+Esta fase es crucial porque la calidad de los datos influye directamente en el rendimiento del modelo.
+
+![Garbage in, garbage out](img/03-preprocesamiento-datos/GIGO.png)
+
+## Tareas de preprocesamiento
+
+- Limpieza de datos.
+- Imputación de valores perdidos.
+- Recodificación de variables.
+- Creación de nuevas variables.
+- Transformación de variables: Normalización, cambio de escala, etc.
+- Selección de variables.
+- Fusión de datos.
+- Reestructuración del conjunto de datos.
+
+---
+
+![Fases del preprocesamiento](img/03-preprocesamiento-datos/fases-preprocesamiento.svg)
+
+
+

@@ -12,6 +12,7 @@ Presentaciones de [aprendizaje automático con R](https://aprendeconalf.es/apren
 
 1. [Introducción](01-introduccion-r.html).
 2. [Aprendizaje Automático](02-aprendizaje-automatico.html).
+3. [Preprocesamiento de Datos](03-preprocesamiento-datos.html).
 
 ## Licencia
 
