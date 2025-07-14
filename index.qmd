@@ -10,7 +10,8 @@ lang: es
 
 Presentaciones de [aprendizaje automático con R](https://aprendeconalf.es/aprendizaje-automatico-practicas-r/).
 
-1. [Introducción](01-aprendizaje-automatico.html).
+1. [Introducción](01-introduccion-r.html).
+2. [Aprendizaje Automático](02-aprendizaje-automatico.html).
 
 ## Licencia
 
