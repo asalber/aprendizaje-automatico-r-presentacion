@@ -1,0 +1,332 @@
+---
+title: "Aprendizaje Automático"
+subtitle: "Cómo aprender de los datos"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+#format: clean-revealjs
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+```{r}
+#| include: false
+#| file: setup.R
+```
+
+## ¿Qué es el Aprendizaje Automático?
+
+> El aprendizaje automático es un campo de la inteligencia artificial que se centra en el desarrollo de algoritmos y modelos que permiten a las computadoras aprender de los datos y hacer predicciones o tomar decisiones sin ser programadas explícitamente para cada tarea.
+>
+
+---
+
+![Aprendizaje Automático](img/02-aprendizaje-automatico/aprendizaje-automatico.svg)
+
+---
+
+```{mermaid}
+%%| echo: false
+graph TD
+    B[Aprendizaje Automático]
+    
+    B --> H[Aprendizaje Supervisado]
+    B --> I[Aprendizaje No Supervisado]
+    B --> J[Aprendizaje por Refuerzo]
+    
+    H --> K[Clasificación]
+    H --> L[Regresión]
+    I --> M[Clustering]
+    I --> N[Reducción de Dimensionalidad]
+    
+    K --> O[Redes Neuronales]
+    K --> P[Máquinas de Soporte Vectorial]
+    K --> Q[Árboles de Decisión]
+    K --> R[Naive Bayes]
+    K --> S[K-Vecinos Más Próximos<br/>KNN]
+    K --> T[Regresión Logística]
+    
+    L --> U[Regresión Lineal]
+    L --> V[Regresión Polinomial]
+    L --> W[Redes Neuronales para Regresión]
+    L --> X[KNN para Regresión]
+    
+    O --> Y[Redes Neuronales Profundas<br/>Deep Learning]
+    O --> Z[Perceptrón Simple]
+    O --> AA[Perceptrón Multicapa]
+    
+    Y --> BB[Redes Convolucionales<br/>CNN]
+    Y --> CC[Redes Recurrentes<br/>RNN/LSTM]
+    Y --> DD[Transformers]
+    Y --> EE[Redes Generativas<br/>GAN]
+    Y --> FF[Autoencoders]
+    
+    classDef aiBox fill:#e1f5fe,stroke:#0277bd,stroke-width:3px
+    classDef mlBox fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef nnBox fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef dlBox fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    
+    class A aiBox
+    class B,H,I,J mlBox
+    class O,Y,Z,AA nnBox
+    class BB,CC,DD,EE,FF dlBox
+```
+
+---
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart TB
+  au[Aprendizaje Automático]
+  sp[Supervisado]
+  au--Datos numéricos o categóricos-->sp
+  us[No supervisado]
+  au--Datos sin clasificar-->us
+  cl[Clasificación]
+  sp--Predice categoría-->cl
+  rs[Regresión]
+  sp--Predice número-->rs
+  ag[Agrupación]
+  us--Divide por similitudes-->ag
+  rd[Reducción de dimensiones]
+  us--Busca dependencias escondidas-->rd
+  as[Asociación]
+  us--Identifica secuencias-->as
+```
+
+## Elementos para el Aprendizaje Automático
+
+- **Datos**: Conjuntos de datos que contienen casos de ejemplos de los que se quiere aprender.
+- **Modelos**: Algoritmos y estructuras matemáticas que representan relaciones en los datos.
+- **Entrenamiento**: Proceso de ajustar los parámetros del modelo utilizando datos etiquetados.
+- **Evaluación**: Medición del rendimiento del modelo utilizando métricas.
+- **Predicción**: Uso del modelo entrenado para predecir resultados en nuevos datos.
+
+## ¿Que es Tidymodels? `r hexes("tidymodels")`
+
+```{r load-tm}
+#| message: true
+library(tidymodels)
+```
+
+##  {background-image="images/tm-org.png" background-size="contain"}
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  tr --> dt
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  lg[Regresión logística]
+  style lg fill:#FDF4E3,stroke:#666,color:#000
+  tr --> lg
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  tr --> dt
+  rf[Bosque Aleatorio]
+  style rf fill:#FDF4E3,stroke:#666,color:#000
+  tr --> rf
+
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  rs[Remuestreo]
+  style rs fill:#FDF4E3,stroke:#666,color:#000
+  tr --> rs
+  lg[Regresión logística]
+  style lg fill:#FDF4E3,stroke:#666,color:#000
+  rs --> lg
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  rs --> dt
+  rf[Bosque Aleatorio]
+  style rf fill:#FDF4E3,stroke:#666,color:#000
+  rs --> rf
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  rs[Remuestreo]
+  style rs fill:#FDF4E3,stroke:#666,color:#000
+  tr --> rs
+  lg[Regresión logística]
+  style lg fill:#FDF4E3,stroke:#666,color:#000
+  rs --> lg
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  rs --> dt
+  rf[Bosque Aleatorio]
+  style rf fill:#FDF4E3,stroke:#666,color:#000
+  rs --> rf
+  sm[Seleccionar modelo]
+  style sm fill:#FDF4E3,stroke:#666,color:#000
+  lg --> sm
+  dt --> sm
+  rf --> sm
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  rs[Remuestreo]
+  style rs fill:#FDF4E3,stroke:#666,color:#000
+  tr --> rs
+  lg[Regresión logística]
+  style lg fill:#FDF4E3,stroke:#666,color:#000
+  rs --> lg
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  rs --> dt
+  rf[Bosque Aleatorio]
+  style rf fill:#FDF4E3,stroke:#666,color:#000
+  rs --> rf
+  sm[Seleccionar modelo]
+  style sm fill:#FDF4E3,stroke:#666,color:#000
+  lg --> sm
+  dt --> sm
+  rf --> sm
+  fm[Entrenar modelo selecionado]
+  style fm fill:#FBE9BF,stroke:#666,color:#000
+  sm --> fm
+  tr --> fm
+```
+
+## Flujo de aprendizaje
+
+```{mermaid}
+%%| echo: false
+%%| eval: true
+%%| fig-width: 12
+flowchart LR
+  ad[Todos los datos]
+  style ad fill:#fff,stroke:#666,color:#000
+  tr[Entrenamiento]
+  style tr fill:#FBE9BF,stroke:#666,color:#000
+  ts[Prueba]
+  style ts fill:#E5E7FD,stroke:#666,color:#000
+  ad --> tr
+  ad --> ts
+  rs[Remuestreo]
+  style rs fill:#FDF4E3,stroke:#666,color:#000
+  tr --> rs
+  lg[Regresión logística]
+  style lg fill:#FDF4E3,stroke:#666,color:#000
+  rs --> lg
+  dt[Arbol de Decisión]
+  style dt fill:#FDF4E3,stroke:#666,color:#000
+  rs --> dt
+  rf[Bosque Aleatorio]
+  style rf fill:#FDF4E3,stroke:#666,color:#000
+  rs --> rf
+  sm[Seleccionar modelo]
+  style sm fill:#FDF4E3,stroke:#666,color:#000
+  lg --> sm
+  dt --> sm
+  rf --> sm
+  fm[Entrenar modelo selecionado]
+  style fm fill:#FBE9BF,stroke:#666,color:#000
+  sm --> fm
+  tr --> fm
+  vm[Verificar la calidad]
+  style vm fill:#E5E7FD,stroke:#666,color:#000
+  fm --> vm
+  ts --> vm
+```
+
+
+
+
+

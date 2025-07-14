@@ -1,0 +1,51 @@
+---
+title: "Introducción a R"
+subtitle: "Curso básico de R"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+format: clean-revealjs
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+## ¿Qué es R?
+
+> _R_ es un potente lenguaje de programación diseñado especialmente para la representación y el análisis de datos.
+
+Fue desarrollado en 1993 por Robert Gentleman y Ross Ihaka en la Universidad de Auckland en Nueva Zelanda.
+
+[![Logotipo de R](img/logos/Rlogo.png){width=300px}](https://www.r-project.org/)
+
+----
+
+### Características
+
+- Es software libre. Puede descargarse desde la web \url{http://www.r-project.org/}.
+- Es multiplataforma. Existen versiones para Windows, Macintosh, Linux y otras plataformas.
+- Es un lenguaje maduro (nació en 1993).
+- Está avalado y en constante desarrollo por una amplia comunidad científica distribuida por todo el mundo que lo utiliza como estándar para el análisis de datos.
+- Es modular. Cuenta con multitud de paquetes para todo tipo de análisis estadísticos y representaciones gráficas. Los paquetes están organizados y documentados en un [repositorio CRAN](https://cran.r-project.org/) (Comprehensive R Archive Network). 
+- Diseñado para el análisis y la representación de datos.
+
+## Instalación de R
+
+R puede descargarse desde el [sitio web oficial de R](https://www.r-project.org/) o desde el repositorio principal de paquetes de R [CRAN](https://cran.r-project.org/). 
+
+El intérprete de R se arranca desde la terminal, aunque en Windows incorpora su propia aplicación, pero es muy básica. En general, para trabajos serios, conviene utilizar un entorno de desarrollo para R. 
+
+### Entornos de desarrollo 
+
+- [RStudio](https://www.rstudio.com/). Probablemente el entorno de desarrollo más extendido para programar con R ya que incorpora multitud de utilidades para facilitar la programación con R.
+
+- [RKWard](https://rkward.kde.org). Es otra otro de los entornos de desarrollo más completos que además incluye a posibilidad de añadir nuevos menús y cuadros de diálogo personalizados.
+
+- [Visual Studio Code](https://code.visualstudio.com/). Es un entorno de desarrollo de propósito general ampliamente extendido. Aunque no es un entorno de desarrollo específico para R, incluye una extensión con utilidades que facilitan mucho el desarrollo con R.
+
+
