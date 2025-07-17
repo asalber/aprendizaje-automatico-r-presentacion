@@ -28,9 +28,7 @@ El aprendizaje supervisado engloba toda una serie de técnicas de aprendizaje au
 
 ## Técnicas de aprendizaje supervisado
 :::: {.columns}
-
 ::: {.column width="50%"}
-
 - **Regresión**: Predicción de variables continuas.
 
     - Modelos de regresión clásicos (lineal, polinómica,Ride, Lasso etc.)
@@ -77,9 +75,87 @@ Los árboles de decisión son modelos que dividen el conjunto de datos de acuerd
 
 ---
 
+![Partición del conjunto de datos con un árbol de decisión](img/05-aprendizaje-supervisado/particion-arbol-decision.png)
+
+### Funcionamiento del algoritmo
+
+En cada nodo del árbol se evalúan las variables explicativas para ver a partir de qué variable se obtienen una partición que minimice la impureza de la clase.
+
+#### Medidas de impureza
+:::: {.columns}
+::: {.column width="50%"}
+- **Gini**: Mide la impureza de una partición. Un valor de 0 indica pureza total.
+
+$$
+GI = 1 - \sum_{i=1}^{n} p_i^2
+$$
+:::
+
+::: {.column width="50%"}
+- **Entropía**: Mide la incertidumbre de una partición. Un valor de 0 indica pureza total.
+
+$$
+EN = - \sum_{i=1}^{n} p_i \log_2(p_i)
+$$
+:::
+::::
+
+Habitualmente se utiliza e índice Gini, ya que tiene un menor coste computacional que la entropía.
+
+---
+
 ### Parámetros del algoritmo
 
 - **Criterio de división**: Método utilizado para dividir los nodos (por ejemplo, Gini, entropía).
 - **Profundidad máxima**: Limita la profundidad del árbol para evitar el sobreajuste.
 - **Número mínimo de casos por hoja**: Número mínimo de casos requeridos para estar en una hoja.
 - **Número mínimo de casos para dividir un nodo**: Número mínimo de casos requeridos para dividir un nodo.
+
+## Bosques aleatorios
+
+![Bosque aleatorio](img/05-aprendizaje-supervisado/bosque-aletorio.png)
+
+### Parámetros del algoritmo
+
+- **Número de árboles**: Cantidad de árboles en el bosque.
+- **Criterio de división**: Método utilizado para dividir los nodos (por ejemplo, Gini, entropía).
+- **Número de variables a considerar**: Número de variables aleatorias a considerar en cada división.
+- **Profundidad máxima**: Limita la profundidad de los árboles para evitar el sobreajuste.
+- **Número mínimo de casos por hoja**: Número mínimo de casos requeridos para estar en una hoja.
+- **Número mínimo de casos para dividir un nodo**: Número mínimo de casos requeridos para dividir un nodo.
+
+## Redes neuronales
+
+Las redes de neuronas artificiales son un modelo computacional inspirado en el funcionamiento del cerebro humano. Una neurona artificial es una unidad de cómputo bastante simple, que recibe una serie de entradas, las procesa y produce una salida. La salida de una neurona puede ser la entrada de otra neurona, formando así una red de neuronas interconectadas, donde cada conexión tiene un peso asociado.
+
+![Red neuronal](img/05-aprendizaje-supervisado/red-neuronal.png)
+
+### Topologías de redes neuronales
+
+![Topologías de redes neuronales](img/05-aprendizaje-supervisado/neural-networks-types-1.png)
+
+---
+
+![Topologías de redes neuronales](img/05-aprendizaje-supervisado/neural-networks-types-2.png)
+
+### Componentes de una neurona (Perceptrón simple)
+
+![Perceptrón simple](img/05-aprendizaje-supervisado/perceptron2.svg)
+
+### Funcionamiento del algoritmo 
+
+El entrenamiento de una red natural se realiza mediante un proceso iterativo conocido como retropropagación, que ajusta los pesos de las conexiones entre las neuronas para minimizar el error en la predicción.
+
+1. **Propagación hacia adelante**: Se calcula la salida de la red para una entrada dada.
+2. **Cálculo del error**: Se calcula la diferencia entre la salida predicha y la salida real.
+3. **Retropropagación del error**: Se ajustan los pesos de las conexiones en la dirección opuesta al _gradiente_ del error, utilizando el algoritmo de descenso de gradiente.
+4. **Repetición**: Se repiten los pasos 1 a 3 para cada entrada en el conjunto de entrenamiento, ajustando los pesos en cada iteración hasta que el error esté por debajo de un umbral predefinido o se alcance un número máximo de iteraciones.
+
+### Parámetros del algoritmo
+
+- **Número de capas ocultas**: Cantidad de capas intermedias entre la capa de entrada y la capa de salida.
+- **Número de neuronas por capa**: Cantidad de neuronas en cada capa oculta.
+- **Función de activación**: Función utilizada para introducir no linealidades en la red (por ejemplo, ReLU, sigmoide, tangente hiperbólica).
+- **Tasa de aprendizaje**: Parámetro que controla la magnitud de los ajustes en los pesos durante la retropropagación.
+- **Número de épocas**: Cantidad de veces que se recorre el conjunto de entrenamiento durante el proceso de entrenamiento.
+- **Tamaño del lote**: Número de muestras utilizadas para calcular el gradiente en cada iteración (batch size).

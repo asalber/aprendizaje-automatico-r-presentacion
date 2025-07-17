@@ -198,6 +198,32 @@
 <p>Los árboles de decisión son modelos que dividen el conjunto de datos de acuerdo a las variables explicativas, intentando maximizar la homogeneidad de las clases en cada división.</p>
 
 <img data-src="img/05-aprendizaje-supervisado/arbol-decision-titanic.png" class="r-stretch quarto-figure-center"><p class="caption">Árbol de decisión del Titanic</p></section>
+<section class="slide level3">
+
+
+<img data-src="img/05-aprendizaje-supervisado/particion-arbol-decision.png" class="r-stretch quarto-figure-center"><p class="caption">Partición del conjunto de datos con un árbol de decisión</p></section>
+<section id="funcionamiento-del-algoritmo" class="slide level3">
+<h3>Funcionamiento del algoritmo</h3>
+<p>En cada nodo del árbol se evalúan las variables explicativas para ver a partir de qué variable se obtienen una partición que minimice la impureza de la clase.</p>
+<h4 id="medidas-de-impureza">Medidas de impureza</h4>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Gini</strong>: Mide la impureza de una partición. Un valor de 0 indica pureza total.</li>
+</ul>
+<p><span class="math display">\[
+GI = 1 - \sum_{i=1}^{n} p_i^2
+\]</span></p>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><strong>Entropía</strong>: Mide la incertidumbre de una partición. Un valor de 0 indica pureza total.</li>
+</ul>
+<p><span class="math display">\[
+EN = - \sum_{i=1}^{n} p_i \log_2(p_i)
+\]</span></p>
+</div></div>
+<p>Habitualmente se utiliza e índice Gini, ya que tiene un menor coste computacional que la entropía.</p>
+</section>
 <section id="parámetros-del-algoritmo-1" class="slide level3">
 <h3>Parámetros del algoritmo</h3>
 <ul>
@@ -205,6 +231,61 @@
 <li><strong>Profundidad máxima</strong>: Limita la profundidad del árbol para evitar el sobreajuste.</li>
 <li><strong>Número mínimo de casos por hoja</strong>: Número mínimo de casos requeridos para estar en una hoja.</li>
 <li><strong>Número mínimo de casos para dividir un nodo</strong>: Número mínimo de casos requeridos para dividir un nodo.</li>
+</ul>
+</section></section>
+<section>
+<section id="bosques-aleatorios" class="title-slide slide level2 center">
+<h2>Bosques aleatorios</h2>
+
+<img data-src="img/05-aprendizaje-supervisado/bosque-aletorio.png" class="r-stretch quarto-figure-center"><p class="caption">Bosque aleatorio</p></section>
+<section id="parámetros-del-algoritmo-2" class="slide level3">
+<h3>Parámetros del algoritmo</h3>
+<ul>
+<li><strong>Número de árboles</strong>: Cantidad de árboles en el bosque.</li>
+<li><strong>Criterio de división</strong>: Método utilizado para dividir los nodos (por ejemplo, Gini, entropía).</li>
+<li><strong>Número de variables a considerar</strong>: Número de variables aleatorias a considerar en cada división.</li>
+<li><strong>Profundidad máxima</strong>: Limita la profundidad de los árboles para evitar el sobreajuste.</li>
+<li><strong>Número mínimo de casos por hoja</strong>: Número mínimo de casos requeridos para estar en una hoja.</li>
+<li><strong>Número mínimo de casos para dividir un nodo</strong>: Número mínimo de casos requeridos para dividir un nodo.</li>
+</ul>
+</section></section>
+<section>
+<section id="redes-neuronales" class="title-slide slide level2 center">
+<h2>Redes neuronales</h2>
+<p>Las redes de neuronas artificiales son un modelo computacional inspirado en el funcionamiento del cerebro humano. Una neurona artificial es una unidad de cómputo bastante simple, que recibe una serie de entradas, las procesa y produce una salida. La salida de una neurona puede ser la entrada de otra neurona, formando así una red de neuronas interconectadas, donde cada conexión tiene un peso asociado.</p>
+
+<img data-src="img/05-aprendizaje-supervisado/red-neuronal.png" class="r-stretch quarto-figure-center"><p class="caption">Red neuronal</p></section>
+<section id="topologías-de-redes-neuronales" class="slide level3">
+<h3>Topologías de redes neuronales</h3>
+
+<img data-src="img/05-aprendizaje-supervisado/neural-networks-types-1.png" class="r-stretch quarto-figure-center"><p class="caption">Topologías de redes neuronales</p></section>
+<section class="slide level3">
+
+
+<img data-src="img/05-aprendizaje-supervisado/neural-networks-types-2.png" class="r-stretch quarto-figure-center"><p class="caption">Topologías de redes neuronales</p></section>
+<section id="componentes-de-una-neurona-perceptrón-simple" class="slide level3">
+<h3>Componentes de una neurona (Perceptrón simple)</h3>
+
+<img data-src="img/05-aprendizaje-supervisado/perceptron2.svg" class="r-stretch quarto-figure-center"><p class="caption">Perceptrón simple</p></section>
+<section id="funcionamiento-del-algoritmo-1" class="slide level3">
+<h3>Funcionamiento del algoritmo</h3>
+<p>El entrenamiento de una red natural se realiza mediante un proceso iterativo conocido como retropropagación, que ajusta los pesos de las conexiones entre las neuronas para minimizar el error en la predicción.</p>
+<ol type="1">
+<li><strong>Propagación hacia adelante</strong>: Se calcula la salida de la red para una entrada dada.</li>
+<li><strong>Cálculo del error</strong>: Se calcula la diferencia entre la salida predicha y la salida real.</li>
+<li><strong>Retropropagación del error</strong>: Se ajustan los pesos de las conexiones en la dirección opuesta al <em>gradiente</em> del error, utilizando el algoritmo de descenso de gradiente.</li>
+<li><strong>Repetición</strong>: Se repiten los pasos 1 a 3 para cada entrada en el conjunto de entrenamiento, ajustando los pesos en cada iteración hasta que el error esté por debajo de un umbral predefinido o se alcance un número máximo de iteraciones.</li>
+</ol>
+</section>
+<section id="parámetros-del-algoritmo-3" class="slide level3">
+<h3>Parámetros del algoritmo</h3>
+<ul>
+<li><strong>Número de capas ocultas</strong>: Cantidad de capas intermedias entre la capa de entrada y la capa de salida.</li>
+<li><strong>Número de neuronas por capa</strong>: Cantidad de neuronas en cada capa oculta.</li>
+<li><strong>Función de activación</strong>: Función utilizada para introducir no linealidades en la red (por ejemplo, ReLU, sigmoide, tangente hiperbólica).</li>
+<li><strong>Tasa de aprendizaje</strong>: Parámetro que controla la magnitud de los ajustes en los pesos durante la retropropagación.</li>
+<li><strong>Número de épocas</strong>: Cantidad de veces que se recorre el conjunto de entrenamiento durante el proceso de entrenamiento.</li>
+<li><strong>Tamaño del lote</strong>: Número de muestras utilizadas para calcular el gradiente en cada iteración (batch size).</li>
 </ul>
 
 </section></section>
