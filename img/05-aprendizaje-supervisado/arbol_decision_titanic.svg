@@ -1,0 +1,36 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+  <!-- Nodo raíz -->
+  <text x="250" y="30" font-size="18" text-anchor="middle">¿sexo hombre?</text>
+  <line x1="250" y1="35" x2="150" y2="80" stroke="black"/>
+  <line x1="250" y1="35" x2="350" y2="80" stroke="black"/>
+
+  <!-- Rama derecha -->
+  <rect x="320" y="80" rx="15" ry="15" width="80" height="30" fill="none" stroke="green" stroke-width="2"/>
+  <text x="360" y="100" text-anchor="middle" fill="green">sobrevivió</text>
+  <text x="360" y="115" text-anchor="middle" font-size="12">0.73 36%</text>
+
+  <!-- Nodo intermedio rama izquierda -->
+  <text x="150" y="80" font-size="16" text-anchor="middle">¿es edad &gt; 9,5?</text>
+  <line x1="150" y1="85" x2="80" y2="140" stroke="black"/>
+  <line x1="150" y1="85" x2="220" y2="140" stroke="black"/>
+
+  <!-- Rama izquierda-izquierda -->
+  <rect x="50" y="140" rx="15" ry="15" width="60" height="30" fill="none" stroke="brown" stroke-width="2"/>
+  <text x="80" y="160" text-anchor="middle" fill="brown">murió</text>
+  <text x="80" y="175" text-anchor="middle" font-size="12">0.17 61%</text>
+
+  <!-- Nodo intermedio rama izquierda-derecha -->
+  <text x="220" y="140" font-size="14" text-anchor="middle">¿es hermanos o&lt;br/&gt;parejas abordo &gt; 2,5?</text>
+  <line x1="220" y1="160" x2="170" y2="220" stroke="black"/>
+  <line x1="220" y1="160" x2="270" y2="220" stroke="black"/>
+
+  <!-- Hoja izquierda final -->
+  <rect x="140" y="220" rx="15" ry="15" width="60" height="30" fill="none" stroke="brown" stroke-width="2"/>
+  <text x="170" y="240" text-anchor="middle" fill="brown">murió</text>
+  <text x="170" y="255" text-anchor="middle" font-size="12">0.05 2%</text>
+
+  <!-- Hoja derecha final -->
+  <rect x="240" y="220" rx="15" ry="15" width="80" height="30" fill="none" stroke="green" stroke-width="2"/>
+  <text x="280" y="240" text-anchor="middle" fill="green">sobrevivió</text>
+  <text x="280" y="255" text-anchor="middle" font-size="12">0.89 2%</text>
+</svg>

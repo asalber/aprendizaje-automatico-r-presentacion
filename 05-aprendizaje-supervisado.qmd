@@ -1,0 +1,85 @@
+---
+title: "Aprendizaje Supervisado"
+subtitle: "Aprendizaje Automático con R"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands twitter >}}](https://twitter.com/aprendeconalf) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+#format: clean-revealjs
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+```{r}
+#| include: false
+#| file: setup.R
+```
+
+## ¿Qué es el aprendizaje supervisado?
+
+El aprendizaje supervisado engloba toda una serie de técnicas de aprendizaje automático en las que el modelo se entrena utilizando un conjunto de datos etiquetados, donde se conoce la el valor de la variable respuesta, y por tanto, el objetivo del modelo es predecir dicha variable a partir de las variables explicativas.
+
+![Aprendizaje supervisado](img/05-aprendizaje-supervisado/aprendizaje-supervisado.png)
+
+## Técnicas de aprendizaje supervisado
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- **Regresión**: Predicción de variables continuas.
+
+    - Modelos de regresión clásicos (lineal, polinómica,Ride, Lasso etc.)
+    - K-vecinos más próximos (KNN)
+    - Árboles de decisión
+    - Bosques aleatorios
+    - Máquinas de soporte vectorial (SVM)
+    - Potenciación del gradiente (Gradient boosting)
+    - Redes neuronales
+:::
+
+::: {.column width="50%"}
+- **Clasificación**: Predicción de variables categóricas.
+
+    - Regresión logística
+    - Análisis discriminante lineal (LDA)
+    - Análisis discriminante cuadrático (QDA)
+    - Clasificador bayesiano ingenuo (Naive Bayes)
+    - K-vecinos más próximos (KNN)
+    - Árboles de decisión
+    - Bosques aleatorios
+    - Regresión de soporte vectorial (SVR)
+    - Potenciación del gradiente (Gradient boosting)
+    - Redes neuronales
+:::
+::::
+
+## K-vecinos más próximos (KNN)
+
+KNN es un algoritmo de clasificación que asigna una clase a un objeto en función de las clases de sus K vecinos más cercanos en el espacio de características.
+
+![Funcionamiento del algoritmo](img/05-aprendizaje-supervisado/nearest_neighbor.gif)
+
+### Parámetros del algoritmo
+
+- **K**: Número de vecinos a considerar.
+- **Distancia**: Métrica utilizada para calcular la distancia entre puntos (euclidiana
+
+## Árboles de decisión 
+
+Los árboles de decisión son modelos que dividen el conjunto de datos de acuerdo a las variables explicativas, intentando maximizar la homogeneidad de las clases en cada división.
+
+![Árbol de decisión del Titanic](img/05-aprendizaje-supervisado/arbol-decision-titanic.png)
+
+---
+
+### Parámetros del algoritmo
+
+- **Criterio de división**: Método utilizado para dividir los nodos (por ejemplo, Gini, entropía).
+- **Profundidad máxima**: Limita la profundidad del árbol para evitar el sobreajuste.
+- **Número mínimo de casos por hoja**: Número mínimo de casos requeridos para estar en una hoja.
+- **Número mínimo de casos para dividir un nodo**: Número mínimo de casos requeridos para dividir un nodo.

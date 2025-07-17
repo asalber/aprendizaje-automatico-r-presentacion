@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="es"><head>
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/tabby.min.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="05-aprendizaje-supervisado_files/libs/clipboard/clipboard.min.js"></script>
+<script src="05-aprendizaje-supervisado_files/libs/quarto-html/tabby.min.js"></script>
+<script src="05-aprendizaje-supervisado_files/libs/quarto-html/popper.min.js"></script>
+<script src="05-aprendizaje-supervisado_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="05-aprendizaje-supervisado_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="05-aprendizaje-supervisado_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="05-aprendizaje-supervisado_files/libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="05-aprendizaje-supervisado_files/libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="05-aprendizaje-supervisado_files/libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.32">
 
-  <title>Presentaciones de Aprendizaje Automático con R</title>
+  <meta name="author" content="Alfredo Sánchez Alberca &nbsp;   ">
+  <title>Aprendizaje Supervisado</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="05-aprendizaje-supervisado_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="05-aprendizaje-supervisado_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -28,13 +31,13 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-843d318472473ac236f225e4d8772e7b.css">
-  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="05-aprendizaje-supervisado_files/libs/revealjs/dist/theme/quarto-843d318472473ac236f225e4d8772e7b.css">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="05-aprendizaje-supervisado_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -129,39 +132,82 @@
 
 <section id="title-slide" class="center">
       <img class="title-logo" src="img/logos/sticker.png" width="250" style="float:right">
-        <h1 class="title">Presentaciones de Aprendizaje Automático con R</h1>
-        
+        <p class="subtitle">Aprendizaje Automático con R</p>
+      <h1 class="title">Aprendizaje Supervisado</h1>
+      <p class="author">Alfredo Sánchez Alberca &nbsp; <a href="mailto:asalber@ceu.es"><i class="fa-solid fa-envelope" aria-label="envelope"></i></a> <a href="https://twitter.com/aprendeconalf"><i class="fa-brands fa-twitter" aria-label="twitter"></i></a> <a href="https://aprendeconalf.es"><i class="fa-solid fa-home" aria-label="home"></i></a></p>
+        <p class="institute">Universidad CEU San Pablo</p>
+      
   </section>
-<section class="slide level2">
+<section id="qué-es-el-aprendizaje-supervisado" class="title-slide slide level2 center">
+<h2>¿Qué es el aprendizaje supervisado?</h2>
+<p>El aprendizaje supervisado engloba toda una serie de técnicas de aprendizaje automático en las que el modelo se entrena utilizando un conjunto de datos etiquetados, donde se conoce la el valor de la variable respuesta, y por tanto, el objetivo del modelo es predecir dicha variable a partir de las variables explicativas.</p>
 
-<p>Presentaciones de <a href="https://aprendeconalf.es/aprendizaje-automatico-practicas-r/">aprendizaje automático con R</a>.</p>
-<ol type="1">
-<li><a href="01-introduccion-r.html">Introducción</a>.</li>
-<li><a href="02-aprendizaje-automatico.html">Aprendizaje Automático</a>.</li>
-<li><a href="03-preprocesamiento-datos.html">Preprocesamiento de Datos</a>.</li>
-<li><a href="04-aprendizaje-no-supervisado.html">Aprendizaje No Supervisado</a>.</li>
-<li><a href="05-aprendizaje-supervisado.html">Aprendizaje Supervisado</a>.</li>
-</ol>
-</section>
-<section id="licencia" class="slide level2">
-<h2>Licencia</h2>
-<p>Esta obra está bajo una licencia Reconocimiento – No comercial – Compartir bajo la misma licencia 3.0 España de Creative Commons. Para ver una copia de esta licencia, visite <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/">https://creativecommons.org/licenses/by-nc-sa/3.0/es/</a>.</p>
-<p>Con esta licencia eres libre de:</p>
-<ul>
-<li>Copiar, distribuir y mostrar este trabajo.</li>
-<li>Realizar modificaciones de este trabajo.</li>
-</ul>
-<p>Bajo las siguientes condiciones:</p>
-<ul>
-<li><p><strong>Reconocimiento</strong>. Debe reconocer los créditos de la obra de la manera especificada por el autor o el licenciador (pero no de una manera que sugiera que tiene su apoyo o apoyan el uso que hace de su obra).</p></li>
-<li><p><strong>No comercial</strong>. No puede utilizar esta obra para fines comerciales.</p></li>
-<li><p><strong>Compartir bajo la misma licencia</strong>. Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta.</p></li>
-</ul>
-<p>Al reutilizar o distribuir la obra, tiene que dejar bien claro los términos de la licencia de esta obra.</p>
-<p>Estas condiciones pueden no aplicarse si se obtiene el permiso del titular de los derechos de autor.</p>
-<p>Nada en esta licencia menoscaba o restringe los derechos morales del autor.</p>
+<img data-src="img/05-aprendizaje-supervisado/aprendizaje-supervisado.png" class="r-stretch quarto-figure-center"><p class="caption">Aprendizaje supervisado</p></section>
 
+<section id="técnicas-de-aprendizaje-supervisado" class="title-slide slide level2 center">
+<h2>Técnicas de aprendizaje supervisado</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><strong>Regresión</strong>: Predicción de variables continuas.</p>
+<ul>
+<li>Modelos de regresión clásicos (lineal, polinómica,Ride, Lasso etc.)</li>
+<li>K-vecinos más próximos (KNN)</li>
+<li>Árboles de decisión</li>
+<li>Bosques aleatorios</li>
+<li>Máquinas de soporte vectorial (SVM)</li>
+<li>Potenciación del gradiente (Gradient boosting)</li>
+<li>Redes neuronales</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><strong>Clasificación</strong>: Predicción de variables categóricas.</p>
+<ul>
+<li>Regresión logística</li>
+<li>Análisis discriminante lineal (LDA)</li>
+<li>Análisis discriminante cuadrático (QDA)</li>
+<li>Clasificador bayesiano ingenuo (Naive Bayes)</li>
+<li>K-vecinos más próximos (KNN)</li>
+<li>Árboles de decisión</li>
+<li>Bosques aleatorios</li>
+<li>Regresión de soporte vectorial (SVR)</li>
+<li>Potenciación del gradiente (Gradient boosting)</li>
+<li>Redes neuronales</li>
+</ul></li>
+</ul>
+</div></div>
 </section>
+
+<section>
+<section id="k-vecinos-más-próximos-knn" class="title-slide slide level2 center">
+<h2>K-vecinos más próximos (KNN)</h2>
+<p>KNN es un algoritmo de clasificación que asigna una clase a un objeto en función de las clases de sus K vecinos más cercanos en el espacio de características.</p>
+
+<img data-src="img/05-aprendizaje-supervisado/nearest_neighbor.gif" class="r-stretch quarto-figure-center"><p class="caption">Funcionamiento del algoritmo</p></section>
+<section id="parámetros-del-algoritmo" class="slide level3">
+<h3>Parámetros del algoritmo</h3>
+<ul>
+<li><strong>K</strong>: Número de vecinos a considerar.</li>
+<li><strong>Distancia</strong>: Métrica utilizada para calcular la distancia entre puntos (euclidiana</li>
+</ul>
+</section></section>
+<section>
+<section id="árboles-de-decisión" class="title-slide slide level2 center">
+<h2>Árboles de decisión</h2>
+<p>Los árboles de decisión son modelos que dividen el conjunto de datos de acuerdo a las variables explicativas, intentando maximizar la homogeneidad de las clases en cada división.</p>
+
+<img data-src="img/05-aprendizaje-supervisado/arbol-decision-titanic.png" class="r-stretch quarto-figure-center"><p class="caption">Árbol de decisión del Titanic</p></section>
+<section id="parámetros-del-algoritmo-1" class="slide level3">
+<h3>Parámetros del algoritmo</h3>
+<ul>
+<li><strong>Criterio de división</strong>: Método utilizado para dividir los nodos (por ejemplo, Gini, entropía).</li>
+<li><strong>Profundidad máxima</strong>: Limita la profundidad del árbol para evitar el sobreajuste.</li>
+<li><strong>Número mínimo de casos por hoja</strong>: Número mínimo de casos requeridos para estar en una hoja.</li>
+<li><strong>Número mínimo de casos para dividir un nodo</strong>: Número mínimo de casos requeridos para dividir un nodo.</li>
+</ul>
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="img/logos/sticker.png" class="slide-logo"></p>
@@ -171,20 +217,20 @@
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="index_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="05-aprendizaje-supervisado_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -380,6 +426,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
