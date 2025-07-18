@@ -142,6 +142,56 @@ Las redes de neuronas artificiales son un modelo computacional inspirado en el f
 
 ![Perceptrón simple](img/05-aprendizaje-supervisado/perceptron2.svg)
 
+
+### Funciones de activación {.smaller}
+
+:::: {.columns}
+::: {.column width="33%"}
+#### Sigmoide
+
+$$
+f(x) = \frac{1}{1 + e^{-x}}
+$$
+
+![](img/05-aprendizaje-supervisado/funcion_sigmoide.svg)
+
+- Rango: (0, 1)
+- Ventajas: Suavidad y derivabilidad.
+- Desventajas: Problema del _desvanecimiento del gradiente_ para valores extremos.
+- Usos: Salida de probabilidad en clasificación binaria.
+:::
+
+::: {.column width="33%"}
+#### Tangente hiperbólica (tanh)
+
+$$
+f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+$$
+
+![](img/05-aprendizaje-supervisado/funcion_tangente_hiperbolica.svg)
+
+- Rango: (-1, 1)
+- Ventajas: Suavidad y derivabilidad. Centrada en cero.
+- Desventajas: Problema del _desvanecimiento del gradiente_ para valores extremos aunque menos que la sigmoide.
+- Usos: Capas ocultas en redes pequeñas.
+:::
+
+::: {.column width="33%"}
+#### ReLU (Rectified Linear Unit)
+
+$$
+f(x) = \max(0, x)
+$$
+
+![](img/05-aprendizaje-supervisado/funcion_relu.svg)
+
+- Rango: [0, ∞)
+- Ventajas: Computacionalmente eficiente y mitiga el problema del _desvanecimiento del gradiente_.
+- Desventajas: Problema de _neuronas muertas_ (donde la salida es siempre 0 si no se inicializan adecuadamente los pesos).
+- Usos: Capas ocultas en redes profundas.
+:::
+::::
+
 ### Funcionamiento del algoritmo 
 
 El entrenamiento de una red natural se realiza mediante un proceso iterativo conocido como retropropagación, que ajusta los pesos de las conexiones entre las neuronas para minimizar el error en la predicción.

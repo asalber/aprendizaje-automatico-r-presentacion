@@ -267,6 +267,47 @@ EN = - \sum_{i=1}^{n} p_i \log_2(p_i)
 <h3>Componentes de una neurona (Perceptrón simple)</h3>
 
 <img data-src="img/05-aprendizaje-supervisado/perceptron2.svg" class="r-stretch quarto-figure-center"><p class="caption">Perceptrón simple</p></section>
+<section id="funciones-de-activación" class="slide level3 smaller">
+<h3>Funciones de activación</h3>
+<div class="columns">
+<div class="column" style="width:33%;">
+<h4 id="sigmoide">Sigmoide</h4>
+<p><span class="math display">\[
+f(x) = \frac{1}{1 + e^{-x}}
+\]</span></p>
+<p><img data-src="img/05-aprendizaje-supervisado/funcion_sigmoide.svg"></p>
+<ul>
+<li>Rango: (0, 1)</li>
+<li>Ventajas: Suavidad y derivabilidad.</li>
+<li>Desventajas: Problema del <em>desvanecimiento del gradiente</em> para valores extremos.</li>
+<li>Usos: Salida de probabilidad en clasificación binaria.</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<h4 id="tangente-hiperbólica-tanh">Tangente hiperbólica (tanh)</h4>
+<p><span class="math display">\[
+f(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+\]</span></p>
+<p><img data-src="img/05-aprendizaje-supervisado/funcion_tangente_hiperbolica.svg"></p>
+<ul>
+<li>Rango: (-1, 1)</li>
+<li>Ventajas: Suavidad y derivabilidad. Centrada en cero.</li>
+<li>Desventajas: Problema del <em>desvanecimiento del gradiente</em> para valores extremos aunque menos que la sigmoide.</li>
+<li>Usos: Capas ocultas en redes pequeñas.</li>
+</ul>
+</div><div class="column" style="width:33%;">
+<h4 id="relu-rectified-linear-unit">ReLU (Rectified Linear Unit)</h4>
+<p><span class="math display">\[
+f(x) = \max(0, x)
+\]</span></p>
+<p><img data-src="img/05-aprendizaje-supervisado/funcion_relu.svg"></p>
+<ul>
+<li>Rango: [0, ∞)</li>
+<li>Ventajas: Computacionalmente eficiente y mitiga el problema del <em>desvanecimiento del gradiente</em>.</li>
+<li>Desventajas: Problema de <em>neuronas muertas</em> (donde la salida es siempre 0 si no se inicializan adecuadamente los pesos).</li>
+<li>Usos: Capas ocultas en redes profundas.</li>
+</ul>
+</div></div>
+</section>
 <section id="funcionamiento-del-algoritmo-1" class="slide level3">
 <h3>Funcionamiento del algoritmo</h3>
 <p>El entrenamiento de una red natural se realiza mediante un proceso iterativo conocido como retropropagación, que ajusta los pesos de las conexiones entre las neuronas para minimizar el error en la predicción.</p>
